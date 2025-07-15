@@ -1,0 +1,46 @@
+#timerPanel { width: 180px; }
+
+#timerDisplay {
+    font-size: 48px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#timerDisplay.running { color: #000; }
+#timerDisplay.paused { color: #999; }
+#timerSlider {
+    width: 100%;
+    margin-bottom: 10px;
+    accent-color: #555;
+}
+
+#settings {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+}
+#timerPanel:hover #settings {
+    display: flex;
+}
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.setting input[type="range"] {
+    flex: 1;
+    margin-left: 10px;
+    accent-color: #555;
+}
+
+#volumeSetting, #maxTimeSetting {
+    display: flex;           /* もともと付いている flex をそのまま利用 */
+    flex-direction: column;  /* ラベルとスライダーを縦に並べる */
+    align-items: flex-start; /* 左寄せ */
+}
+
+#volumeSetting input[type="range"], #maxTimeSetting input[type="range"] {
+    margin: 5px 0 0 0;       /* 上に少し余白を入れて */
+    width: 100%;
+}
