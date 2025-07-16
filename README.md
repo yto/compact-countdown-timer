@@ -1,14 +1,16 @@
 # Compact Countdown Timer Chrome Extension
 
+(English/[Japanese](README-ja.md))
+
 A simple and lightweight countdown timer that you can adjust on the fly. Originally developed as a standalone HTML page, now packaged as a Chrome extension for quick access directly from your browser toolbar.
 
 ## Features
 
-* **Adjustable Timer**: Drag the slider or click preset buttons to set your desired countdown duration.
+* **Adjustable Timer**: Drag the slider to set your desired countdown duration.
 * **Immediate Alert**: Plays an alarm sound at 00:00 without delay.
 * **Volume Control**: Mouse-over to reveal volume settings.
 * **Clean UI**: Minimalist design that fits within the Chrome popup.
-* **Persistent Settings** (coming soon): Option to remember your last-used duration.
+* **Persistent Settings**: Remembers the last-used duration and settings.
 
 ## Installation
 
@@ -32,20 +34,7 @@ A simple and lightweight countdown timer that you can adjust on the fly. Origina
 3. Mouse-over the timer to reveal volume and other settings.
 4. Click **Start** to begin the countdown. The alarm plays immediately when time reaches 00:00.
 
-## File Structure
-
-```
-compact-countdown-extension/
-├── manifest.json        # Chrome Extension manifest (MV3)
-├── popup.html           # HTML for the popup UI
-├── popup.css            # Styles for the popup
-├── popup.js             # Logic for timer and settings
-└── icons/               # Extension icons
-    ├── icon16.png       # 16×16 px icon
-    ├── icon48.png       # 48×48 px icon
-    └── icon128.png      # 128×128 px icon
-```
-
 ## License
 
 This project is licensed under the MIT License.
+

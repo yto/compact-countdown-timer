@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "コンパクトカウントダウンタイマー",
+    "name": "Compact Countdown Timer",
     "version": "0.0.1",
-    "description": "任意の時間で動作するシンプルなカウントダウンタイマー",
+    "description": "A simple and lightweight countdown timer that you can adjust on the fly.",
     "permissions": [
         "storage"
     ],
