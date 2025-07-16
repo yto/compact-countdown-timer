@@ -32,7 +32,7 @@ A simple and lightweight countdown timer that you can adjust on the fly. Origina
 1. Click the extension icon in Chrome's toolbar.
 2. Use the slider to set your countdown duration.
 3. Mouse-over the timer to reveal volume and other settings.
-4. Click **Start** to begin the countdown. The alarm plays immediately when time reaches 00:00.
+4. Start the countdown by clicking the displayed time or moving the slider.  The alarm plays immediately when time reaches 00:00.
 
 ## License
 
