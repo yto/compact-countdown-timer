@@ -18,7 +18,7 @@ A simple and lightweight countdown timer that you can adjust on the fly. Origina
 
    ```bash
    git clone https://github.com/your-username/compact-countdown-extension.git
-   cd compact-countdown-extension
+   cd compact-countdown-timer
    ```
 2. Package or load as an unpacked extension:
 
