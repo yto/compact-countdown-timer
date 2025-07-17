@@ -24,14 +24,15 @@ A simple and lightweight countdown timer that you can adjust on the fly. Origina
 
    * Open Chrome and go to `chrome://extensions/`.
    * Enable **Developer mode** (toggle in the top right).
-   * Click **Load unpacked** and select this directory.
+   * Click **Load unpacked** and select the `chrome` directory.
 3. Click the timer icon in the toolbar to open the popup and start using the countdown.
 
 ## Running Tests
 
-Install dependencies and run Jest:
+Install dependencies and run Jest from the `chrome` folder:
 
 ```bash
+cd chrome
 npm install
 npm test
 ```
