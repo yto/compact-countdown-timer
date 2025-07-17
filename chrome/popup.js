@@ -39,6 +39,28 @@
         }
     }
 
+    // ── ① tick(): 1秒ごとの共通処理をまとめる ──
+    function tick() {
+        // 残り時間を 1 秒減らし、表示を更新
+        remaining = Math.max(0, remaining - 1);
+        updateDisplay();
+        // chrome.storage に残り時間を保存
+        chrome.storage.local.set({ savedRemaining: remaining });
+        // 0 秒になったらチャイム再生＆タイマークリア
+        if (remaining === 0) {
+            chrome.storage.local.remove('savedRemaining');
+            playChime();
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+    // ── ② startTimer(): setInterval の呼び出しを一元管理 ──
+    function startTimer() {
+        if (timer !== null) return;  // すでに動作中なら何もしない
+        // 1 秒ごとに tick() を呼び出す
+        timer = setInterval(tick, 1000);
+    }
+
     // Slider input: update remaining time and display
     slider.addEventListener('input', (e) => {
         clearInterval(timer);
@@ -51,18 +73,7 @@
     // Slider change: start countdown
     slider.addEventListener('change', (e) => {
         if (remaining > 0) {
-            clearInterval(timer);
-            timer = setInterval(() => {
-                remaining = Math.max(0, remaining - 1);
-                updateDisplay();          // まず 1 秒減らして時間表示を更新
-                chrome.storage.local.set({ savedRemaining: remaining });
-                if (remaining === 0) {    // その場でゼロチェック
-                    chrome.storage.local.remove('savedRemaining');
-                    playChime();            // 00:00 になった瞬間に鳴る
-                    clearInterval(timer);
-                    timer = null;
-                }
-            }, 1000);
+            startTimer();
         }
     });
 
@@ -73,17 +84,7 @@
             timer = null;
             updateDisplay();
         } else if (remaining > 0) {
-            timer = setInterval(() => {
-                remaining = Math.max(0, remaining - 1);
-                updateDisplay();          // まず 1 秒減らして時間表示を更新
-                chrome.storage.local.set({ savedRemaining: remaining });
-                if (remaining === 0) {    // その場でゼロチェック
-                    chrome.storage.local.remove('savedRemaining');
-                    playChime();            // 00:00 になった瞬間に鳴る
-                    clearInterval(timer);
-                    timer = null;
-                }
-            }, 1000);
+            startTimer();
         }
         updateDisplay();
     });
