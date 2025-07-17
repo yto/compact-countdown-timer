@@ -10,12 +10,6 @@
     const maxTimeSlider = document.getElementById('maxTimeSlider');
     const maxTimeValue = document.getElementById('maxTimeValue');
 
-    function formatTime(sec) {
-        const m = String(Math.floor(sec / 60)).padStart(2, '0');
-        const s = String(sec % 60).padStart(2, '0');
-        return `${m}:${s}`;
-    }
-
     function playChime() {
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
         const osc = ctx.createOscillator();

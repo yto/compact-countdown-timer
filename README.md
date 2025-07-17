@@ -27,6 +27,15 @@ A simple and lightweight countdown timer that you can adjust on the fly. Origina
    * Click **Load unpacked** and select this directory.
 3. Click the timer icon in the toolbar to open the popup and start using the countdown.
 
+## Running Tests
+
+Install dependencies and run Jest:
+
+```bash
+npm install
+npm test
+```
+
 ## Usage
 
 1. Click the extension icon in Chrome's toolbar.
