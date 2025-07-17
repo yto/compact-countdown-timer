@@ -18,7 +18,7 @@
 
    ```bash
    git clone https://github.com/your-username/compact-countdown-extension.git
-   cd compact-countdown-extension
+   cd compact-countdown-timer
    ```
 2. Chrome に「パッケージ化されていない拡張機能」として読み込む
 
