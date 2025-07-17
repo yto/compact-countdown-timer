@@ -27,7 +27,10 @@
         gain.gain.value = volumeSlider.value;
         osc.start();
         gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + chimeDuration);
-        setTimeout(() => osc.stop(), 1000);
+        setTimeout(() => {
+            osc.stop();
+            ctx.close();
+        }, chimeDuration * 1000);
     }
 
     function updateDisplay() {
