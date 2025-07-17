@@ -1,0 +1,14 @@
+{
+  "name": "compact-countdown-timer",
+  "version": "1.0.0",
+  "description": "Compact Countdown Timer Chrome extension",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
