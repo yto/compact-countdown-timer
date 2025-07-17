@@ -1,4 +1,4 @@
-const formatTime = require('../formatTime');
+const formatTime = require('../chrome/formatTime');
 
 describe('formatTime', () => {
   test('formats 0 seconds', () => {
