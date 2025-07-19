@@ -4,6 +4,11 @@
 
 A simple and lightweight countdown timer that you can adjust on the fly. Originally developed as a standalone HTML page, now packaged as a Chrome extension for quick access directly from your browser toolbar.
 
+## Chrome Web Store
+
+Compact Countdown Timer - Chrome Web Store
+https://chromewebstore.google.com/detail/compact-countdown-timer/gldacfngoojoejbpmibifoddkcmbhnil
+
 ## Features
 
 * **Adjustable Timer**: Drag the slider to set your desired countdown duration.
