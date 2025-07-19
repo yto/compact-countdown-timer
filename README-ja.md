@@ -4,6 +4,11 @@
 
 シンプルで軽量、かつ即座に調整可能なカウントダウンタイマーです。もともと独立した HTML ページとして開発されましたが、ブラウザのツールバーから直接呼び出せる Chrome 拡張機能としてパッケージ化しました。
 
+## Chrome ウェブストア
+
+Compact Countdown Timer - Chrome Web Store
+https://chromewebstore.google.com/detail/compact-countdown-timer/gldacfngoojoejbpmibifoddkcmbhnil
+
 ## 機能
 
 * **調整可能なタイマー**: スライダーをドラッグして任意のカウントダウン時間を設定
