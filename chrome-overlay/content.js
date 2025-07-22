@@ -308,8 +308,17 @@ function injectTimerBox(pos = null) {
         hostRef.style.left = pos.left + 'px';
         hostRef.style.right = 'auto';
     } else {
-        hostRef.style.top  = '10px';
-        hostRef.style.right = '10px'; // 初回は右寄せ
+        // 初回：見た目上は右上に出すが、保存するのは left/top
+        const defaultTop  = 10;
+        const width       = 180; // タイマーボックス幅
+        const defaultLeft = window.innerWidth - width - 30;
+        hostRef.style.top  = defaultTop  + 'px';
+        hostRef.style.left = defaultLeft + 'px';
+        hostRef.style.right = 'auto';
+        chrome.runtime.sendMessage({
+            type: 'SET_POS',
+            pos: { top: defaultTop, left: defaultLeft }
+        });
     }
 
     // Draggable
