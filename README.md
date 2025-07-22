@@ -24,6 +24,12 @@ https://chromewebstore.google.com/detail/compact-countdown-timer/gldacfngoojoejb
 3. Click the settings icon to reveal volume and other settings.
 4. Start the countdown by clicking the displayed time or moving the slider.  The alarm plays immediately when time reaches 00:00.
 
+## Customizing the Shortcut
+
+1. In Chrome, go to `chrome://extensions/shortcuts`.
+2. Find **Compact Countdown Timer** in the list.
+3. Click the binding for **Toggle the on-page timer box** and record your preferred keys.
+
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for the full text.

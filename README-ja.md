@@ -24,6 +24,12 @@ https://chromewebstore.google.com/detail/compact-countdown-timer/gldacfngoojoejb
 3. 設定アイコンをクリックして音量やその他設定を表示
 4. 表示時間をクリックするか、スライダーを動かすことでカウントダウン開始。00:00 到達時に即座にアラームが鳴ります
 
+## ショートカットの変更
+
+1. Chrome のアドレスバーに `chrome://extensions/shortcuts` を入力して開く
+2. "Compact Countdown Timer" を探し、
+3. "Toggle the on-page timer box" の欄をクリックして任意のキーを入力
+
 ## ライセンス
 
 MIT ライセンスの下で公開しています。
