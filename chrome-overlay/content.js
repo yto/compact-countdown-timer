@@ -3,6 +3,7 @@ let timerInterval = null;
 let remaining = 0;
 let maxTime = 30 * 60; // 30min default
 let volume = 0.5;
+let initialRemaining = null;  // ★追加：タイマー設定時の初期値を覚えておく
 
 // Host/shadow refs for cleanup
 let hostRef = null;
@@ -227,6 +228,7 @@ function injectTimerBox(pos = null) {
     // ===== Event bindings =====
     slider.addEventListener("input", (e) => {
         remaining = Number(e.target.value);
+        initialRemaining = remaining;  // ★追加：この時点の設定値を記録
         updateDisplay();
         chrome.storage.local.set({ savedRemaining: remaining });
     });
@@ -288,6 +290,8 @@ function injectTimerBox(pos = null) {
                 remaining = maxTime;
             }
 
+            initialRemaining = remaining;  // ★追加：復元した値を初期値としても覚える
+
             if (res.savedVolume != null) {
                 volume = res.savedVolume;
                 volSlider.value = volume;
@@ -346,12 +350,21 @@ function startTimer() {
         updateDisplay();
         chrome.storage.local.set({ savedRemaining: remaining });
         if (remaining === 0) {
-            chrome.storage.local.remove("savedRemaining");
+            // chrome.storage.local.remove("savedRemaining");  // ★削除：完了後も初期値に戻して保持したいので消す
             playChime(3); // 本番用 3秒
             clearInterval(timerInterval);
             timerInterval = null;
             disp.classList.remove("running");
             disp.classList.add("paused");
+
+            // ★追加：終了後に初期値へ戻す
+            if (initialRemaining != null) {
+                remaining = initialRemaining;
+            } else {
+                remaining = maxTime; // 念のためのフォールバック
+            }
+            updateDisplay();
+            chrome.storage.local.set({ savedRemaining: remaining });
         }
     }, 1000);
 }
